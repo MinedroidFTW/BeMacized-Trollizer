@@ -33,5 +33,10 @@ namespace BeMacized_Trollizer
                 MessageBox.Show("fail");
             }
         }
+
+        private void btnMD5gen_Click(object sender, EventArgs e)
+        {
+            txtMD5output.Text = Wouter.Main.GenMD5(txtMD5input.Text, MD5useweb.Checked);
+        }
     }
 }
