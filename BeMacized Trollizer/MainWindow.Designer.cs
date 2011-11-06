@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ContactGB = new System.Windows.Forms.GroupBox();
+            this.mailWouto = new System.Windows.Forms.LinkLabel();
+            this.skypeWouto = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MD5useweb = new System.Windows.Forms.CheckBox();
@@ -46,16 +50,21 @@
             this.btnPwdGen = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.ContactGB = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.skypeWouto = new System.Windows.Forms.LinkLabel();
-            this.mailWouto = new System.Windows.Forms.LinkLabel();
+            this.btnDirCreate = new System.Windows.Forms.Button();
+            this.DirCreateGB = new System.Windows.Forms.GroupBox();
+            this.btnFileCreate = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.lblFilename = new System.Windows.Forms.Label();
+            this.lblFilePath = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.ContactGB.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.ContactGB.SuspendLayout();
+            this.DirCreateGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -79,9 +88,55 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
+            // ContactGB
+            // 
+            this.ContactGB.Controls.Add(this.mailWouto);
+            this.ContactGB.Controls.Add(this.skypeWouto);
+            this.ContactGB.Controls.Add(this.label1);
+            this.ContactGB.Location = new System.Drawing.Point(8, 6);
+            this.ContactGB.Name = "ContactGB";
+            this.ContactGB.Size = new System.Drawing.Size(98, 63);
+            this.ContactGB.TabIndex = 1;
+            this.ContactGB.TabStop = false;
+            this.ContactGB.Text = "Contact us";
+            // 
+            // mailWouto
+            // 
+            this.mailWouto.AutoSize = true;
+            this.mailWouto.Location = new System.Drawing.Point(59, 42);
+            this.mailWouto.Name = "mailWouto";
+            this.mailWouto.Size = new System.Drawing.Size(25, 13);
+            this.mailWouto.TabIndex = 2;
+            this.mailWouto.TabStop = true;
+            this.mailWouto.Text = "Mail";
+            this.mailWouto.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.mailWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mailWouto_LinkClicked);
+            // 
+            // skypeWouto
+            // 
+            this.skypeWouto.AutoSize = true;
+            this.skypeWouto.Location = new System.Drawing.Point(59, 25);
+            this.skypeWouto.Name = "skypeWouto";
+            this.skypeWouto.Size = new System.Drawing.Size(36, 13);
+            this.skypeWouto.TabIndex = 1;
+            this.skypeWouto.TabStop = true;
+            this.skypeWouto.Text = "Skype";
+            this.skypeWouto.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.skypeWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wouter:";
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.DirCreateGB);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -218,50 +273,83 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ContactGB
+            // btnDirCreate
             // 
-            this.ContactGB.Controls.Add(this.mailWouto);
-            this.ContactGB.Controls.Add(this.skypeWouto);
-            this.ContactGB.Controls.Add(this.label1);
-            this.ContactGB.Location = new System.Drawing.Point(8, 6);
-            this.ContactGB.Name = "ContactGB";
-            this.ContactGB.Size = new System.Drawing.Size(105, 92);
-            this.ContactGB.TabIndex = 1;
-            this.ContactGB.TabStop = false;
-            this.ContactGB.Text = "Contact us";
+            this.btnDirCreate.Location = new System.Drawing.Point(301, 71);
+            this.btnDirCreate.Name = "btnDirCreate";
+            this.btnDirCreate.Size = new System.Drawing.Size(104, 23);
+            this.btnDirCreate.TabIndex = 1;
+            this.btnDirCreate.Text = "Create Directory";
+            this.btnDirCreate.UseVisualStyleBackColor = true;
+            this.btnDirCreate.Click += new System.EventHandler(this.btnDirCreate_Click);
             // 
-            // label1
+            // DirCreateGB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wouter:";
+            this.DirCreateGB.Controls.Add(this.txtFileName);
+            this.DirCreateGB.Controls.Add(this.lblFilePath);
+            this.DirCreateGB.Controls.Add(this.lblFilename);
+            this.DirCreateGB.Controls.Add(this.txtFilePath);
+            this.DirCreateGB.Controls.Add(this.btnBrowse);
+            this.DirCreateGB.Controls.Add(this.btnFileCreate);
+            this.DirCreateGB.Controls.Add(this.btnDirCreate);
+            this.DirCreateGB.Location = new System.Drawing.Point(218, 113);
+            this.DirCreateGB.Name = "DirCreateGB";
+            this.DirCreateGB.Size = new System.Drawing.Size(411, 100);
+            this.DirCreateGB.TabIndex = 7;
+            this.DirCreateGB.TabStop = false;
+            this.DirCreateGB.Text = "Create textfiles and directories with any name!";
             // 
-            // skypeWouto
+            // btnFileCreate
             // 
-            this.skypeWouto.AutoSize = true;
-            this.skypeWouto.Location = new System.Drawing.Point(59, 25);
-            this.skypeWouto.Name = "skypeWouto";
-            this.skypeWouto.Size = new System.Drawing.Size(36, 13);
-            this.skypeWouto.TabIndex = 1;
-            this.skypeWouto.TabStop = true;
-            this.skypeWouto.Text = "Skype";
-            this.skypeWouto.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.skypeWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.btnFileCreate.Location = new System.Drawing.Point(301, 42);
+            this.btnFileCreate.Name = "btnFileCreate";
+            this.btnFileCreate.Size = new System.Drawing.Size(104, 23);
+            this.btnFileCreate.TabIndex = 2;
+            this.btnFileCreate.Text = "Create Textfile";
+            this.btnFileCreate.UseVisualStyleBackColor = true;
+            this.btnFileCreate.Click += new System.EventHandler(this.btnFileCreate_Click);
             // 
-            // mailWouto
+            // btnBrowse
             // 
-            this.mailWouto.AutoSize = true;
-            this.mailWouto.Location = new System.Drawing.Point(59, 42);
-            this.mailWouto.Name = "mailWouto";
-            this.mailWouto.Size = new System.Drawing.Size(25, 13);
-            this.mailWouto.TabIndex = 2;
-            this.mailWouto.TabStop = true;
-            this.mailWouto.Text = "Mail";
-            this.mailWouto.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.mailWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mailWouto_LinkClicked);
+            this.btnBrowse.Location = new System.Drawing.Point(301, 13);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(104, 23);
+            this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.Text = "Browse...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(41, 15);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(254, 20);
+            this.txtFilePath.TabIndex = 4;
+            // 
+            // lblFilename
+            // 
+            this.lblFilename.AutoSize = true;
+            this.lblFilename.Location = new System.Drawing.Point(5, 57);
+            this.lblFilename.Name = "lblFilename";
+            this.lblFilename.Size = new System.Drawing.Size(34, 13);
+            this.lblFilename.TabIndex = 5;
+            this.lblFilename.Text = "Name";
+            // 
+            // lblFilePath
+            // 
+            this.lblFilePath.AutoSize = true;
+            this.lblFilePath.Location = new System.Drawing.Point(6, 18);
+            this.lblFilePath.Name = "lblFilePath";
+            this.lblFilePath.Size = new System.Drawing.Size(29, 13);
+            this.lblFilePath.TabIndex = 6;
+            this.lblFilePath.Text = "Path";
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Location = new System.Drawing.Point(45, 54);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(250, 20);
+            this.txtFileName.TabIndex = 7;
             // 
             // MainWindow
             // 
@@ -274,13 +362,15 @@
             this.Text = "BeMacized Trollizer";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.ContactGB.ResumeLayout(false);
+            this.ContactGB.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.ContactGB.ResumeLayout(false);
-            this.ContactGB.PerformLayout();
+            this.DirCreateGB.ResumeLayout(false);
+            this.DirCreateGB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +398,14 @@
         private System.Windows.Forms.LinkLabel skypeWouto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel mailWouto;
+        private System.Windows.Forms.GroupBox DirCreateGB;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Button btnFileCreate;
+        private System.Windows.Forms.Button btnDirCreate;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.Label lblFilePath;
+        private System.Windows.Forms.Label lblFilename;
     }
 }
 
