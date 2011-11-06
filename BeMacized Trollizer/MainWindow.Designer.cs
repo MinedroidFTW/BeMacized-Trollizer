@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ContactGB = new System.Windows.Forms.GroupBox();
@@ -36,6 +37,14 @@
             this.skypeWouto = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.DirCreateGB = new System.Windows.Forms.GroupBox();
+            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.lblFilePath = new System.Windows.Forms.Label();
+            this.lblFilename = new System.Windows.Forms.Label();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.btnFileCreate = new System.Windows.Forms.Button();
+            this.btnDirCreate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MD5useweb = new System.Windows.Forms.CheckBox();
             this.lblMD52 = new System.Windows.Forms.Label();
@@ -48,29 +57,32 @@
             this.txtPwdLgth = new System.Windows.Forms.TextBox();
             this.Pwdlabel = new System.Windows.Forms.Label();
             this.btnPwdGen = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chckSpam = new System.Windows.Forms.CheckBox();
+            this.btnSpamStart = new System.Windows.Forms.Button();
+            this.lblspamrepeat = new System.Windows.Forms.Label();
+            this.txtspamrepeat = new System.Windows.Forms.TextBox();
+            this.txtspamtext = new System.Windows.Forms.TextBox();
+            this.lblspamtext = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnDirCreate = new System.Windows.Forms.Button();
-            this.DirCreateGB = new System.Windows.Forms.GroupBox();
-            this.btnFileCreate = new System.Windows.Forms.Button();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.lblFilename = new System.Windows.Forms.Label();
-            this.lblFilePath = new System.Windows.Forms.Label();
-            this.txtFileName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.ContactGB.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.DirCreateGB.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.DirCreateGB.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -145,6 +157,84 @@
             this.tabPage3.Size = new System.Drawing.Size(635, 406);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Generators";
+            // 
+            // DirCreateGB
+            // 
+            this.DirCreateGB.Controls.Add(this.txtFileName);
+            this.DirCreateGB.Controls.Add(this.lblFilePath);
+            this.DirCreateGB.Controls.Add(this.lblFilename);
+            this.DirCreateGB.Controls.Add(this.txtFilePath);
+            this.DirCreateGB.Controls.Add(this.btnBrowse);
+            this.DirCreateGB.Controls.Add(this.btnFileCreate);
+            this.DirCreateGB.Controls.Add(this.btnDirCreate);
+            this.DirCreateGB.Location = new System.Drawing.Point(218, 113);
+            this.DirCreateGB.Name = "DirCreateGB";
+            this.DirCreateGB.Size = new System.Drawing.Size(411, 100);
+            this.DirCreateGB.TabIndex = 7;
+            this.DirCreateGB.TabStop = false;
+            this.DirCreateGB.Text = "Create textfiles and directories with any name!";
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Location = new System.Drawing.Point(45, 54);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.Size = new System.Drawing.Size(250, 20);
+            this.txtFileName.TabIndex = 7;
+            // 
+            // lblFilePath
+            // 
+            this.lblFilePath.AutoSize = true;
+            this.lblFilePath.Location = new System.Drawing.Point(6, 18);
+            this.lblFilePath.Name = "lblFilePath";
+            this.lblFilePath.Size = new System.Drawing.Size(29, 13);
+            this.lblFilePath.TabIndex = 6;
+            this.lblFilePath.Text = "Path";
+            // 
+            // lblFilename
+            // 
+            this.lblFilename.AutoSize = true;
+            this.lblFilename.Location = new System.Drawing.Point(5, 57);
+            this.lblFilename.Name = "lblFilename";
+            this.lblFilename.Size = new System.Drawing.Size(34, 13);
+            this.lblFilename.TabIndex = 5;
+            this.lblFilename.Text = "Name";
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(41, 15);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(254, 20);
+            this.txtFilePath.TabIndex = 4;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(301, 13);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(104, 23);
+            this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.Text = "Browse...";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnFileCreate
+            // 
+            this.btnFileCreate.Location = new System.Drawing.Point(301, 42);
+            this.btnFileCreate.Name = "btnFileCreate";
+            this.btnFileCreate.Size = new System.Drawing.Size(104, 23);
+            this.btnFileCreate.TabIndex = 2;
+            this.btnFileCreate.Text = "Create Textfile";
+            this.btnFileCreate.UseVisualStyleBackColor = true;
+            this.btnFileCreate.Click += new System.EventHandler(this.btnFileCreate_Click);
+            // 
+            // btnDirCreate
+            // 
+            this.btnDirCreate.Location = new System.Drawing.Point(301, 71);
+            this.btnDirCreate.Name = "btnDirCreate";
+            this.btnDirCreate.Size = new System.Drawing.Size(104, 23);
+            this.btnDirCreate.TabIndex = 1;
+            this.btnDirCreate.Text = "Create Directory";
+            this.btnDirCreate.UseVisualStyleBackColor = true;
+            this.btnDirCreate.Click += new System.EventHandler(this.btnDirCreate_Click);
             // 
             // groupBox2
             // 
@@ -263,6 +353,89 @@
             this.btnPwdGen.UseVisualStyleBackColor = true;
             this.btnPwdGen.Click += new System.EventHandler(this.btnPwdGen_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(635, 406);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Misc";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chckSpam);
+            this.groupBox3.Controls.Add(this.btnSpamStart);
+            this.groupBox3.Controls.Add(this.lblspamrepeat);
+            this.groupBox3.Controls.Add(this.txtspamrepeat);
+            this.groupBox3.Controls.Add(this.txtspamtext);
+            this.groupBox3.Controls.Add(this.lblspamtext);
+            this.groupBox3.Location = new System.Drawing.Point(3, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(278, 100);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Spamtool";
+            // 
+            // chckSpam
+            // 
+            this.chckSpam.AutoSize = true;
+            this.chckSpam.Checked = true;
+            this.chckSpam.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckSpam.Location = new System.Drawing.Point(6, 75);
+            this.chckSpam.Name = "chckSpam";
+            this.chckSpam.Size = new System.Drawing.Size(102, 17);
+            this.chckSpam.TabIndex = 5;
+            this.chckSpam.Text = "Use fast sender";
+            this.Tooltip.SetToolTip(this.chckSpam, resources.GetString("chckSpam.ToolTip"));
+            this.chckSpam.UseVisualStyleBackColor = true;
+            // 
+            // btnSpamStart
+            // 
+            this.btnSpamStart.Location = new System.Drawing.Point(175, 71);
+            this.btnSpamStart.Name = "btnSpamStart";
+            this.btnSpamStart.Size = new System.Drawing.Size(97, 23);
+            this.btnSpamStart.TabIndex = 4;
+            this.btnSpamStart.Text = "Start";
+            this.btnSpamStart.UseVisualStyleBackColor = true;
+            this.btnSpamStart.Click += new System.EventHandler(this.btnSpamStart_Click);
+            // 
+            // lblspamrepeat
+            // 
+            this.lblspamrepeat.AutoSize = true;
+            this.lblspamrepeat.Location = new System.Drawing.Point(6, 51);
+            this.lblspamrepeat.Name = "lblspamrepeat";
+            this.lblspamrepeat.Size = new System.Drawing.Size(42, 13);
+            this.lblspamrepeat.TabIndex = 3;
+            this.lblspamrepeat.Text = "Repeat";
+            // 
+            // txtspamrepeat
+            // 
+            this.txtspamrepeat.Location = new System.Drawing.Point(68, 48);
+            this.txtspamrepeat.Name = "txtspamrepeat";
+            this.txtspamrepeat.Size = new System.Drawing.Size(204, 20);
+            this.txtspamrepeat.TabIndex = 2;
+            this.txtspamrepeat.Text = "10";
+            // 
+            // txtspamtext
+            // 
+            this.txtspamtext.Location = new System.Drawing.Point(68, 22);
+            this.txtspamtext.Name = "txtspamtext";
+            this.txtspamtext.Size = new System.Drawing.Size(204, 20);
+            this.txtspamtext.TabIndex = 1;
+            this.txtspamtext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblspamtext
+            // 
+            this.lblspamtext.AutoSize = true;
+            this.lblspamtext.Location = new System.Drawing.Point(6, 25);
+            this.lblspamtext.Name = "lblspamtext";
+            this.lblspamtext.Size = new System.Drawing.Size(56, 13);
+            this.lblspamtext.TabIndex = 0;
+            this.lblspamtext.Text = "Spam text";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(559, 447);
@@ -273,83 +446,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnDirCreate
+            // Tooltip
             // 
-            this.btnDirCreate.Location = new System.Drawing.Point(301, 71);
-            this.btnDirCreate.Name = "btnDirCreate";
-            this.btnDirCreate.Size = new System.Drawing.Size(104, 23);
-            this.btnDirCreate.TabIndex = 1;
-            this.btnDirCreate.Text = "Create Directory";
-            this.btnDirCreate.UseVisualStyleBackColor = true;
-            this.btnDirCreate.Click += new System.EventHandler(this.btnDirCreate_Click);
-            // 
-            // DirCreateGB
-            // 
-            this.DirCreateGB.Controls.Add(this.txtFileName);
-            this.DirCreateGB.Controls.Add(this.lblFilePath);
-            this.DirCreateGB.Controls.Add(this.lblFilename);
-            this.DirCreateGB.Controls.Add(this.txtFilePath);
-            this.DirCreateGB.Controls.Add(this.btnBrowse);
-            this.DirCreateGB.Controls.Add(this.btnFileCreate);
-            this.DirCreateGB.Controls.Add(this.btnDirCreate);
-            this.DirCreateGB.Location = new System.Drawing.Point(218, 113);
-            this.DirCreateGB.Name = "DirCreateGB";
-            this.DirCreateGB.Size = new System.Drawing.Size(411, 100);
-            this.DirCreateGB.TabIndex = 7;
-            this.DirCreateGB.TabStop = false;
-            this.DirCreateGB.Text = "Create textfiles and directories with any name!";
-            // 
-            // btnFileCreate
-            // 
-            this.btnFileCreate.Location = new System.Drawing.Point(301, 42);
-            this.btnFileCreate.Name = "btnFileCreate";
-            this.btnFileCreate.Size = new System.Drawing.Size(104, 23);
-            this.btnFileCreate.TabIndex = 2;
-            this.btnFileCreate.Text = "Create Textfile";
-            this.btnFileCreate.UseVisualStyleBackColor = true;
-            this.btnFileCreate.Click += new System.EventHandler(this.btnFileCreate_Click);
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(301, 13);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(104, 23);
-            this.btnBrowse.TabIndex = 3;
-            this.btnBrowse.Text = "Browse...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtFilePath
-            // 
-            this.txtFilePath.Location = new System.Drawing.Point(41, 15);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(254, 20);
-            this.txtFilePath.TabIndex = 4;
-            // 
-            // lblFilename
-            // 
-            this.lblFilename.AutoSize = true;
-            this.lblFilename.Location = new System.Drawing.Point(5, 57);
-            this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(34, 13);
-            this.lblFilename.TabIndex = 5;
-            this.lblFilename.Text = "Name";
-            // 
-            // lblFilePath
-            // 
-            this.lblFilePath.AutoSize = true;
-            this.lblFilePath.Location = new System.Drawing.Point(6, 18);
-            this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(29, 13);
-            this.lblFilePath.TabIndex = 6;
-            this.lblFilePath.Text = "Path";
-            // 
-            // txtFileName
-            // 
-            this.txtFileName.Location = new System.Drawing.Point(45, 54);
-            this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(250, 20);
-            this.txtFileName.TabIndex = 7;
+            this.Tooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.Tooltip_Popup);
             // 
             // MainWindow
             // 
@@ -358,6 +457,7 @@
             this.ClientSize = new System.Drawing.Size(646, 482);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "BeMacized Trollizer";
             this.tabControl1.ResumeLayout(false);
@@ -365,12 +465,15 @@
             this.ContactGB.ResumeLayout(false);
             this.ContactGB.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.DirCreateGB.ResumeLayout(false);
+            this.DirCreateGB.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.DirCreateGB.ResumeLayout(false);
-            this.DirCreateGB.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,6 +509,14 @@
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.Label lblFilePath;
         private System.Windows.Forms.Label lblFilename;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtspamtext;
+        private System.Windows.Forms.Label lblspamtext;
+        private System.Windows.Forms.Label lblspamrepeat;
+        private System.Windows.Forms.TextBox txtspamrepeat;
+        private System.Windows.Forms.Button btnSpamStart;
+        private System.Windows.Forms.CheckBox chckSpam;
     }
 }
 

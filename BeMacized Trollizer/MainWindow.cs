@@ -44,6 +44,8 @@ namespace BeMacized_Trollizer
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             wb = new WebBrowser();
+            // skype autochat: skype:username?chat
+            // skype autocall: skype:username?call
             wb.Navigate("skype:Wouto1997?chat");
             wb.Dispose();
         }
@@ -84,6 +86,36 @@ namespace BeMacized_Trollizer
             {
                 MessageBox.Show("File or directory with that name already exists!");
             }
+        }
+
+        private void btnSpamStart_Click(object sender, EventArgs e)
+        {
+            int times = 0;
+            try
+            {
+                times = Convert.ToInt32(txtspamrepeat.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Just use a number at repeat option...");
+            }
+            if (times != 0)
+            {
+                MessageBox.Show("Focus in a textfield and wait 5 seconds after pressing ok!", "Prepare!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                StartSpamTimer(txtspamtext.Text, times, chckSpam.Checked);
+            }
+        }
+        public void StartSpamTimer(string spamtext, int times, bool use)
+        {
+            System.Timers.Timer Clock = new System.Timers.Timer(5000);
+            Clock.Elapsed += delegate { Wouter.Main.StartSpam(spamtext, times, use); Clock.Dispose(); };
+            Clock.Start();
+        }
+
+        private void Tooltip_Popup(object sender, PopupEventArgs e)
+        {
+            Tooltip.IsBalloon = true;
         }
     }
 }

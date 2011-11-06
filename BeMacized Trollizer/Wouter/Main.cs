@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace BeMacized_Trollizer.Wouter
 {
@@ -56,6 +57,27 @@ namespace BeMacized_Trollizer.Wouter
                 sBuilder.Append(data[i].ToString("x2"));
             }
             return sBuilder.ToString();
+        }
+        public static void StartSpam(string text, int times, bool usefast)
+        {
+            while (times > 0)
+            {
+                if (!usefast)
+                {
+                    times--;
+                    SendKeys.SendWait(text + "{ENTER}");
+                    System.Threading.Thread.Sleep(50);
+                    SendKeys.SendWait("{ENTER}");
+                    System.Threading.Thread.Sleep(50);
+                    SendKeys.SendWait("{ENTER}");
+                    System.Threading.Thread.Sleep(50);
+                }
+                else
+                {
+                    times--;
+                    SendKeys.SendWait(text + "{ENTER}");
+                }
+            }
         }
     }
 }
