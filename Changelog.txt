@@ -1,1 +1,4 @@
-[Changelog]
+0.0.0.1
+- START!
+- Added MD5 Hash Generator
+- Added Password Generator
