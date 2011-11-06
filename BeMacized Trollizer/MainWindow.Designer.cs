@@ -260,6 +260,8 @@
             this.mailWouto.TabIndex = 2;
             this.mailWouto.TabStop = true;
             this.mailWouto.Text = "Mail";
+            this.mailWouto.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.mailWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mailWouto_LinkClicked);
             // 
             // MainWindow
             // 
