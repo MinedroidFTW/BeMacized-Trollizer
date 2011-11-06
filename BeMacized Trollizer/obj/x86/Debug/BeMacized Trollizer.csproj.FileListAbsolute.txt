@@ -1,0 +1,9 @@
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\bin\Debug\BeMacized Trollizer.exe
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\bin\Debug\BeMacized Trollizer.pdb
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\BeMacized_Trollizer.Form1.resources
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\BeMacized_Trollizer.Properties.Resources.resources
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\BeMacized Trollizer.exe
+c:\users\wouter gerarts\FirstGame\BeMacized-Trollizer\BeMacized Trollizer\obj\x86\Debug\BeMacized Trollizer.pdb
