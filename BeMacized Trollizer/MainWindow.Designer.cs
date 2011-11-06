@@ -31,32 +31,36 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.MD5useweb = new System.Windows.Forms.CheckBox();
+            this.lblMD52 = new System.Windows.Forms.Label();
+            this.lblMD51 = new System.Windows.Forms.Label();
+            this.btnMD5gen = new System.Windows.Forms.Button();
+            this.txtMD5output = new System.Windows.Forms.TextBox();
+            this.txtMD5input = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPwd = new System.Windows.Forms.RichTextBox();
             this.txtPwdLgth = new System.Windows.Forms.TextBox();
             this.Pwdlabel = new System.Windows.Forms.Label();
             this.btnPwdGen = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtMD5input = new System.Windows.Forms.TextBox();
-            this.txtMD5output = new System.Windows.Forms.TextBox();
-            this.btnMD5gen = new System.Windows.Forms.Button();
-            this.lblMD51 = new System.Windows.Forms.Label();
-            this.lblMD52 = new System.Windows.Forms.Label();
-            this.MD5useweb = new System.Windows.Forms.CheckBox();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.ContactGB = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.skypeWouto = new System.Windows.Forms.LinkLabel();
+            this.mailWouto = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.ContactGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -67,22 +71,13 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.ContactGB);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(635, 406);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(635, 406);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Misc";
             // 
             // tabPage3
             // 
@@ -95,6 +90,75 @@
             this.tabPage3.Size = new System.Drawing.Size(635, 406);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Generators";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.MD5useweb);
+            this.groupBox2.Controls.Add(this.lblMD52);
+            this.groupBox2.Controls.Add(this.lblMD51);
+            this.groupBox2.Controls.Add(this.btnMD5gen);
+            this.groupBox2.Controls.Add(this.txtMD5output);
+            this.groupBox2.Controls.Add(this.txtMD5input);
+            this.groupBox2.Location = new System.Drawing.Point(218, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(222, 100);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "MD5 Generator";
+            // 
+            // MD5useweb
+            // 
+            this.MD5useweb.AutoSize = true;
+            this.MD5useweb.Location = new System.Drawing.Point(11, 48);
+            this.MD5useweb.Name = "MD5useweb";
+            this.MD5useweb.Size = new System.Drawing.Size(102, 17);
+            this.MD5useweb.TabIndex = 9;
+            this.MD5useweb.Text = "Use webversion";
+            this.Tooltip.SetToolTip(this.MD5useweb, "Enable this if you want to use a webpage to create \r\nthe MD5 hash instead of the " +
+                    "program.");
+            this.MD5useweb.UseVisualStyleBackColor = true;
+            // 
+            // lblMD52
+            // 
+            this.lblMD52.AutoSize = true;
+            this.lblMD52.Location = new System.Drawing.Point(6, 76);
+            this.lblMD52.Name = "lblMD52";
+            this.lblMD52.Size = new System.Drawing.Size(41, 13);
+            this.lblMD52.TabIndex = 8;
+            this.lblMD52.Text = "Output";
+            // 
+            // lblMD51
+            // 
+            this.lblMD51.AutoSize = true;
+            this.lblMD51.Location = new System.Drawing.Point(6, 21);
+            this.lblMD51.Name = "lblMD51";
+            this.lblMD51.Size = new System.Drawing.Size(33, 13);
+            this.lblMD51.TabIndex = 7;
+            this.lblMD51.Text = "Input";
+            // 
+            // btnMD5gen
+            // 
+            this.btnMD5gen.Location = new System.Drawing.Point(119, 44);
+            this.btnMD5gen.Name = "btnMD5gen";
+            this.btnMD5gen.Size = new System.Drawing.Size(94, 23);
+            this.btnMD5gen.TabIndex = 2;
+            this.btnMD5gen.Text = "Generate";
+            this.btnMD5gen.UseVisualStyleBackColor = true;
+            this.btnMD5gen.Click += new System.EventHandler(this.btnMD5gen_Click);
+            // 
+            // txtMD5output
+            // 
+            this.txtMD5output.Location = new System.Drawing.Point(59, 73);
+            this.txtMD5output.Name = "txtMD5output";
+            this.txtMD5output.Size = new System.Drawing.Size(157, 20);
+            this.txtMD5output.TabIndex = 1;
+            // 
+            // txtMD5input
+            // 
+            this.txtMD5input.Location = new System.Drawing.Point(62, 18);
+            this.txtMD5input.Name = "txtMD5input";
+            this.txtMD5input.Size = new System.Drawing.Size(152, 20);
+            this.txtMD5input.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -154,74 +218,48 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // groupBox2
+            // ContactGB
             // 
-            this.groupBox2.Controls.Add(this.MD5useweb);
-            this.groupBox2.Controls.Add(this.lblMD52);
-            this.groupBox2.Controls.Add(this.lblMD51);
-            this.groupBox2.Controls.Add(this.btnMD5gen);
-            this.groupBox2.Controls.Add(this.txtMD5output);
-            this.groupBox2.Controls.Add(this.txtMD5input);
-            this.groupBox2.Location = new System.Drawing.Point(218, 7);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(222, 100);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "MD5 Generator";
+            this.ContactGB.Controls.Add(this.mailWouto);
+            this.ContactGB.Controls.Add(this.skypeWouto);
+            this.ContactGB.Controls.Add(this.label1);
+            this.ContactGB.Location = new System.Drawing.Point(8, 6);
+            this.ContactGB.Name = "ContactGB";
+            this.ContactGB.Size = new System.Drawing.Size(105, 92);
+            this.ContactGB.TabIndex = 1;
+            this.ContactGB.TabStop = false;
+            this.ContactGB.Text = "Contact us";
             // 
-            // txtMD5input
+            // label1
             // 
-            this.txtMD5input.Location = new System.Drawing.Point(62, 18);
-            this.txtMD5input.Name = "txtMD5input";
-            this.txtMD5input.Size = new System.Drawing.Size(152, 20);
-            this.txtMD5input.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wouter:";
             // 
-            // txtMD5output
+            // skypeWouto
             // 
-            this.txtMD5output.Location = new System.Drawing.Point(59, 73);
-            this.txtMD5output.Name = "txtMD5output";
-            this.txtMD5output.Size = new System.Drawing.Size(157, 20);
-            this.txtMD5output.TabIndex = 1;
+            this.skypeWouto.AutoSize = true;
+            this.skypeWouto.Location = new System.Drawing.Point(59, 25);
+            this.skypeWouto.Name = "skypeWouto";
+            this.skypeWouto.Size = new System.Drawing.Size(36, 13);
+            this.skypeWouto.TabIndex = 1;
+            this.skypeWouto.TabStop = true;
+            this.skypeWouto.Text = "Skype";
+            this.skypeWouto.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.skypeWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // btnMD5gen
+            // mailWouto
             // 
-            this.btnMD5gen.Location = new System.Drawing.Point(119, 44);
-            this.btnMD5gen.Name = "btnMD5gen";
-            this.btnMD5gen.Size = new System.Drawing.Size(94, 23);
-            this.btnMD5gen.TabIndex = 2;
-            this.btnMD5gen.Text = "Generate";
-            this.btnMD5gen.UseVisualStyleBackColor = true;
-            this.btnMD5gen.Click += new System.EventHandler(this.btnMD5gen_Click);
-            // 
-            // lblMD51
-            // 
-            this.lblMD51.AutoSize = true;
-            this.lblMD51.Location = new System.Drawing.Point(6, 21);
-            this.lblMD51.Name = "lblMD51";
-            this.lblMD51.Size = new System.Drawing.Size(33, 13);
-            this.lblMD51.TabIndex = 7;
-            this.lblMD51.Text = "Input";
-            // 
-            // lblMD52
-            // 
-            this.lblMD52.AutoSize = true;
-            this.lblMD52.Location = new System.Drawing.Point(6, 76);
-            this.lblMD52.Name = "lblMD52";
-            this.lblMD52.Size = new System.Drawing.Size(41, 13);
-            this.lblMD52.TabIndex = 8;
-            this.lblMD52.Text = "Output";
-            // 
-            // MD5useweb
-            // 
-            this.MD5useweb.AutoSize = true;
-            this.MD5useweb.Location = new System.Drawing.Point(11, 48);
-            this.MD5useweb.Name = "MD5useweb";
-            this.MD5useweb.Size = new System.Drawing.Size(102, 17);
-            this.MD5useweb.TabIndex = 9;
-            this.MD5useweb.Text = "Use webversion";
-            this.Tooltip.SetToolTip(this.MD5useweb, "Enable this if you want to use a webpage to create \r\nthe MD5 hash instead of the " +
-                    "program.");
-            this.MD5useweb.UseVisualStyleBackColor = true;
+            this.mailWouto.AutoSize = true;
+            this.mailWouto.Location = new System.Drawing.Point(59, 42);
+            this.mailWouto.Name = "mailWouto";
+            this.mailWouto.Size = new System.Drawing.Size(25, 13);
+            this.mailWouto.TabIndex = 2;
+            this.mailWouto.TabStop = true;
+            this.mailWouto.Text = "Mail";
             // 
             // MainWindow
             // 
@@ -233,11 +271,14 @@
             this.Name = "MainWindow";
             this.Text = "BeMacized Trollizer";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ContactGB.ResumeLayout(false);
+            this.ContactGB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,7 +287,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -262,6 +302,10 @@
         private System.Windows.Forms.TextBox txtMD5input;
         private System.Windows.Forms.CheckBox MD5useweb;
         private System.Windows.Forms.ToolTip Tooltip;
+        private System.Windows.Forms.GroupBox ContactGB;
+        private System.Windows.Forms.LinkLabel skypeWouto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel mailWouto;
     }
 }
 

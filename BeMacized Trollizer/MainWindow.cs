@@ -38,5 +38,11 @@ namespace BeMacized_Trollizer
         {
             txtMD5output.Text = Wouter.Main.GenMD5(txtMD5input.Text, MD5useweb.Checked);
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            WebBrowser wb = new WebBrowser();
+            wb.Navigate("skype:Wouto1997?chat");
+        }
     }
 }
