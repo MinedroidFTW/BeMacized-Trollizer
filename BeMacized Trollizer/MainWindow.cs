@@ -12,7 +12,7 @@ namespace BeMacized_Trollizer
 {
     public partial class MainWindow : Form
     {
-        WebBrowser wb = new WebBrowser();
+        WebBrowser wb;
         public MainWindow()
         {
             InitializeComponent();
@@ -43,12 +43,16 @@ namespace BeMacized_Trollizer
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            wb = new WebBrowser();
             wb.Navigate("skype:Wouto1997?chat");
+            wb.Dispose();
         }
 
         private void mailWouto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            wb = new WebBrowser();
             wb.Navigate("mailto:wouto1997@gmail.com");
+            wb.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
