@@ -1,6 +1,6 @@
 ﻿namespace BeMacized_Trollizer
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPwdGen = new System.Windows.Forms.Button();
-            this.Pwdlabel = new System.Windows.Forms.Label();
-            this.txtPwdLgth = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.RichTextBox();
+            this.txtPwdLgth = new System.Windows.Forms.TextBox();
+            this.Pwdlabel = new System.Windows.Forms.Label();
+            this.btnPwdGen = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,16 +74,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Misc";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(559, 447);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
@@ -108,15 +98,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Password Generator";
             // 
-            // btnPwdGen
+            // txtPwd
             // 
-            this.btnPwdGen.Location = new System.Drawing.Point(140, 97);
-            this.btnPwdGen.Name = "btnPwdGen";
-            this.btnPwdGen.Size = new System.Drawing.Size(60, 23);
-            this.btnPwdGen.TabIndex = 0;
-            this.btnPwdGen.Text = "Generate";
-            this.btnPwdGen.UseVisualStyleBackColor = true;
-            this.btnPwdGen.Click += new System.EventHandler(this.btnPwdGen_Click);
+            this.txtPwd.Location = new System.Drawing.Point(6, 19);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(194, 74);
+            this.txtPwd.TabIndex = 5;
+            this.txtPwd.Text = "";
+            // 
+            // txtPwdLgth
+            // 
+            this.txtPwdLgth.Location = new System.Drawing.Point(70, 99);
+            this.txtPwdLgth.Name = "txtPwdLgth";
+            this.txtPwdLgth.Size = new System.Drawing.Size(64, 20);
+            this.txtPwdLgth.TabIndex = 4;
+            this.txtPwdLgth.Text = "100";
             // 
             // Pwdlabel
             // 
@@ -127,30 +123,34 @@
             this.Pwdlabel.TabIndex = 3;
             this.Pwdlabel.Text = "characters";
             // 
-            // txtPwdLgth
+            // btnPwdGen
             // 
-            this.txtPwdLgth.Location = new System.Drawing.Point(70, 99);
-            this.txtPwdLgth.Name = "txtPwdLgth";
-            this.txtPwdLgth.Size = new System.Drawing.Size(64, 20);
-            this.txtPwdLgth.TabIndex = 4;
-            this.txtPwdLgth.Text = "100";
+            this.btnPwdGen.Location = new System.Drawing.Point(140, 97);
+            this.btnPwdGen.Name = "btnPwdGen";
+            this.btnPwdGen.Size = new System.Drawing.Size(60, 23);
+            this.btnPwdGen.TabIndex = 0;
+            this.btnPwdGen.Text = "Generate";
+            this.btnPwdGen.UseVisualStyleBackColor = true;
+            this.btnPwdGen.Click += new System.EventHandler(this.btnPwdGen_Click);
             // 
-            // txtPwd
+            // button1
             // 
-            this.txtPwd.Location = new System.Drawing.Point(6, 19);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(194, 74);
-            this.txtPwd.TabIndex = 5;
-            this.txtPwd.Text = "";
+            this.button1.Location = new System.Drawing.Point(559, 447);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 482);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "BeMacized Trollizer";
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
