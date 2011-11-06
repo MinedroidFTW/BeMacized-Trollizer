@@ -2,3 +2,4 @@
 - START!
 - Added MD5 Hash Generator
 - Added Password Generator
+- Added Spammer
