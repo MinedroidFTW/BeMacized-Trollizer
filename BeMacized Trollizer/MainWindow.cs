@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;  
 
 namespace BeMacized_Trollizer
 {
@@ -17,6 +19,9 @@ namespace BeMacized_Trollizer
         {
             InitializeComponent();
             this.Text = "BeMacized Trollizer - " + Application.ProductVersion;
+            txtPST.BackColor = SystemColors.Control;
+            txtPST.ForeColor = SystemColors.Control;
+            txtPST.Text = "Succes!";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,6 +121,41 @@ namespace BeMacized_Trollizer
         private void Tooltip_Popup(object sender, PopupEventArgs e)
         {
             Tooltip.IsBalloon = true;
+        }
+
+        private void btnPrintScreen_Click(object sender, EventArgs e)
+        {
+            if (Settings.canuseprintscreen)
+            {
+                Settings.canuseprintscreen = false;
+                MessageBox.Show("Please focus where you want to take an image, and press ok!", "Get ready!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //this.WindowState = FormWindowState.Minimized;
+                this.Opacity = 0;
+                PrintScreen();
+                this.Opacity = 100;
+            }
+            else
+            {
+                MessageBox.Show("Print screen is cooling down ;)");
+            }
+        }
+        public void PrintScreen()
+        {
+            SendKeys.SendWait("{PRTSC}");
+            BeMacized_Trollizer.MainWindow.ActiveForm.Opacity = 100;
+            txtPST.BackColor = Color.DarkGreen;
+            RestorePST();
+        }
+        public void RestorePST()
+        {
+            System.Timers.Timer Clock = new System.Timers.Timer(3000);
+            Clock.Elapsed += delegate
+            {
+                Settings.canuseprintscreen = true;
+                txtPST.BackColor = SystemColors.Control;
+                Clock.Dispose();
+            };
+            Clock.Start();
         }
     }
 }

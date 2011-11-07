@@ -58,6 +58,9 @@
             this.Pwdlabel = new System.Windows.Forms.Label();
             this.btnPwdGen = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtPST = new System.Windows.Forms.TextBox();
+            this.btnPrintScreen = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chckSpam = new System.Windows.Forms.CheckBox();
             this.btnSpamStart = new System.Windows.Forms.Button();
@@ -75,6 +78,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,6 +360,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -363,6 +368,38 @@
             this.tabPage4.Size = new System.Drawing.Size(635, 406);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Misc";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtPST);
+            this.groupBox4.Controls.Add(this.btnPrintScreen);
+            this.groupBox4.Location = new System.Drawing.Point(287, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(129, 68);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Print Screen";
+            // 
+            // txtPST
+            // 
+            this.txtPST.Location = new System.Drawing.Point(6, 44);
+            this.txtPST.Name = "txtPST";
+            this.txtPST.ReadOnly = true;
+            this.txtPST.Size = new System.Drawing.Size(117, 20);
+            this.txtPST.TabIndex = 1;
+            this.txtPST.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPrintScreen
+            // 
+            this.btnPrintScreen.Location = new System.Drawing.Point(6, 19);
+            this.btnPrintScreen.Name = "btnPrintScreen";
+            this.btnPrintScreen.Size = new System.Drawing.Size(117, 23);
+            this.btnPrintScreen.TabIndex = 0;
+            this.btnPrintScreen.Text = "Print Screen";
+            this.Tooltip.SetToolTip(this.btnPrintScreen, "This copies your current screen to your clipboard\r\nas image. When you press okay " +
+                    "the form will hide and\r\ntake the screenshot! so be prepared :)");
+            this.btnPrintScreen.UseVisualStyleBackColor = true;
+            this.btnPrintScreen.Click += new System.EventHandler(this.btnPrintScreen_Click);
             // 
             // groupBox3
             // 
@@ -457,6 +494,7 @@
             this.ClientSize = new System.Drawing.Size(646, 482);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "BeMacized Trollizer";
@@ -472,6 +510,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -517,6 +557,9 @@
         private System.Windows.Forms.TextBox txtspamrepeat;
         private System.Windows.Forms.Button btnSpamStart;
         private System.Windows.Forms.CheckBox chckSpam;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnPrintScreen;
+        private System.Windows.Forms.TextBox txtPST;
     }
 }
 

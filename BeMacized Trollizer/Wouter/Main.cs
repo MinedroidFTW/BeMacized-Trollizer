@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Windows;
 
 namespace BeMacized_Trollizer.Wouter
 {

@@ -10,6 +10,7 @@ namespace BeMacized_Trollizer
     {
         // variables
         public static bool internetconnection = false;
+        public static bool canuseprintscreen = true;
 
         // methods
 
