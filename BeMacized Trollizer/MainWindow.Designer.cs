@@ -485,6 +485,7 @@
             // 
             // Tooltip
             // 
+            this.Tooltip.IsBalloon = true;
             this.Tooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.Tooltip_Popup);
             // 
             // MainWindow
