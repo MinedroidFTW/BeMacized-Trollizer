@@ -3,3 +3,5 @@
 - Added MD5 Hash Generator
 - Added Password Generator
 - Added Spammer
+- Added Homepage
+- Added Update system
