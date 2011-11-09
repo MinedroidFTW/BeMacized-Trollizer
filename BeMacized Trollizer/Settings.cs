@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net;
+using System.Windows.Forms;
 
 namespace BeMacized_Trollizer
 {
@@ -11,6 +12,7 @@ namespace BeMacized_Trollizer
         // variables
         public static bool internetconnection = false;
         public static bool canuseprintscreen = true;
+        public static bool uptodate = true;
 
         // methods
 
@@ -30,6 +32,16 @@ namespace BeMacized_Trollizer
             {
                 internetconnection = true;
             }
+        }
+        public static bool CheckUpdate()
+        {
+            WebClient wc = new WebClient();
+            string update = wc.DownloadString("http://data.bemacizedgaming.com/vercompare.php?cv=");
+            if (update == "true")
+            {
+                uptodate = false;
+            }
+            return uptodate;
         }
     }
 }
