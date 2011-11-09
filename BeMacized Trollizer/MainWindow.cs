@@ -8,20 +8,23 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
-using System.Drawing.Imaging;  
+using System.Drawing.Imaging;
+using BeMacized_Trollizer.Wouter;
 
 namespace BeMacized_Trollizer
 {
     public partial class MainWindow : Form
     {
-        WebBrowser wb;
         public MainWindow()
         {
             InitializeComponent();
             this.Text = "BeMacized Trollizer - " + Application.ProductVersion;
+            webBrowser1.Visible = false;
+            webBrowser1.Navigate("http://data.bemacizedgaming.com/bmgtroller.php?cv=" + Application.ProductVersion);
             txtPST.BackColor = SystemColors.Control;
             txtPST.ForeColor = SystemColors.Control;
             txtPST.Text = "Succes!";
+            if (Settings.CheckUpdate()) { MessageBox.Show("You need to update!"); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,11 +36,11 @@ namespace BeMacized_Trollizer
         {
             try
             {
-                txtPwd.Text = Wouter.Main.GenPassword(Convert.ToInt32(txtPwdLgth.Text));
+                txtPwd.Text = Main.GenPassword(Convert.ToInt32(txtPwdLgth.Text));
             }
             catch
             {
-                MessageBox.Show("fail");
+                MessageBox.Show("Failed!");
             }
         }
 
@@ -45,23 +48,6 @@ namespace BeMacized_Trollizer
         {
             txtMD5output.Text = Wouter.Main.GenMD5(txtMD5input.Text, MD5useweb.Checked);
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            wb = new WebBrowser();
-            // skype autochat: skype:username?chat
-            // skype autocall: skype:username?call
-            wb.Navigate("skype:Wouto1997?chat");
-            wb.Dispose();
-        }
-
-        private void mailWouto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            wb = new WebBrowser();
-            wb.Navigate("mailto:wouto1997@gmail.com");
-            wb.Dispose();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog d = new FolderBrowserDialog();
@@ -156,6 +142,11 @@ namespace BeMacized_Trollizer
                 Clock.Dispose();
             };
             Clock.Start();
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser1.Visible = true;
         }
     }
 }

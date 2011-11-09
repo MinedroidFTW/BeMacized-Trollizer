@@ -32,10 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ContactGB = new System.Windows.Forms.GroupBox();
-            this.mailWouto = new System.Windows.Forms.LinkLabel();
-            this.skypeWouto = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DirCreateGB = new System.Windows.Forms.GroupBox();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -68,11 +65,10 @@
             this.txtspamrepeat = new System.Windows.Forms.TextBox();
             this.txtspamtext = new System.Windows.Forms.TextBox();
             this.lblspamtext = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEXIT = new System.Windows.Forms.Button();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.ContactGB.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.DirCreateGB.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -96,7 +92,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.ContactGB);
+            this.tabPage1.Controls.Add(this.webBrowser1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -104,50 +100,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
-            // ContactGB
+            // webBrowser1
             // 
-            this.ContactGB.Controls.Add(this.mailWouto);
-            this.ContactGB.Controls.Add(this.skypeWouto);
-            this.ContactGB.Controls.Add(this.label1);
-            this.ContactGB.Location = new System.Drawing.Point(8, 6);
-            this.ContactGB.Name = "ContactGB";
-            this.ContactGB.Size = new System.Drawing.Size(98, 63);
-            this.ContactGB.TabIndex = 1;
-            this.ContactGB.TabStop = false;
-            this.ContactGB.Text = "Contact us";
-            // 
-            // mailWouto
-            // 
-            this.mailWouto.AutoSize = true;
-            this.mailWouto.Location = new System.Drawing.Point(59, 42);
-            this.mailWouto.Name = "mailWouto";
-            this.mailWouto.Size = new System.Drawing.Size(25, 13);
-            this.mailWouto.TabIndex = 2;
-            this.mailWouto.TabStop = true;
-            this.mailWouto.Text = "Mail";
-            this.mailWouto.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.mailWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.mailWouto_LinkClicked);
-            // 
-            // skypeWouto
-            // 
-            this.skypeWouto.AutoSize = true;
-            this.skypeWouto.Location = new System.Drawing.Point(59, 25);
-            this.skypeWouto.Name = "skypeWouto";
-            this.skypeWouto.Size = new System.Drawing.Size(36, 13);
-            this.skypeWouto.TabIndex = 1;
-            this.skypeWouto.TabStop = true;
-            this.skypeWouto.Text = "Skype";
-            this.skypeWouto.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.skypeWouto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wouter:";
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(629, 400);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // tabPage3
             // 
@@ -473,15 +435,15 @@
             this.lblspamtext.TabIndex = 0;
             this.lblspamtext.Text = "Spam text";
             // 
-            // button1
+            // btnEXIT
             // 
-            this.button1.Location = new System.Drawing.Point(559, 447);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEXIT.Location = new System.Drawing.Point(559, 447);
+            this.btnEXIT.Name = "btnEXIT";
+            this.btnEXIT.Size = new System.Drawing.Size(75, 23);
+            this.btnEXIT.TabIndex = 0;
+            this.btnEXIT.Text = "Exit";
+            this.btnEXIT.UseVisualStyleBackColor = true;
+            this.btnEXIT.Click += new System.EventHandler(this.button1_Click);
             // 
             // Tooltip
             // 
@@ -492,8 +454,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 482);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(638, 482);
+            this.Controls.Add(this.btnEXIT);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -501,8 +464,6 @@
             this.Text = "BeMacized Trollizer";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.ContactGB.ResumeLayout(false);
-            this.ContactGB.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.DirCreateGB.ResumeLayout(false);
             this.DirCreateGB.PerformLayout();
@@ -523,7 +484,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEXIT;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnPwdGen;
@@ -538,10 +499,6 @@
         private System.Windows.Forms.TextBox txtMD5input;
         private System.Windows.Forms.CheckBox MD5useweb;
         private System.Windows.Forms.ToolTip Tooltip;
-        private System.Windows.Forms.GroupBox ContactGB;
-        private System.Windows.Forms.LinkLabel skypeWouto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel mailWouto;
         private System.Windows.Forms.GroupBox DirCreateGB;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnBrowse;
@@ -561,6 +518,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnPrintScreen;
         private System.Windows.Forms.TextBox txtPST;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

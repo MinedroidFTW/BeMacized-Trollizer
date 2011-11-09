@@ -11,6 +11,7 @@ namespace BeMacized_Trollizer.Wouter
 {
     public static class Main
     {
+        public static double opacity = 0;
         public static string GenPassword(int chars)
         {
             Random rand = new Random(BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0));
