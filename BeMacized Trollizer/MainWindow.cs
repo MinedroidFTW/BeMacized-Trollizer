@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
 using System.Drawing.Imaging;
 using BeMacized_Trollizer.Wouter;
 
@@ -19,8 +18,15 @@ namespace BeMacized_Trollizer
         {
             InitializeComponent();
             this.Text = "BeMacized Trollizer - " + Application.ProductVersion;
-            webBrowser1.Visible = false;
-            webBrowser1.Navigate("http://data.bemacizedgaming.com/bmgtroller.php?cv=" + Application.ProductVersion);
+            //webControl1.Visible = false;
+            
+            if (Settings.uptodate)
+                //webControl1.Navigate("http://bemacized.com/trollizer/uptodate/index.html");
+                webControl1.LoadURL("http://bemacized.com/trollizer/uptodate/index.html");
+            else
+                webControl1.LoadURL("http://bemacized.com/trollizer/updateavailable/index.html");
+             
+            //webBrowser1.Navigate("http://data.bemacizedgaming.com/bmgtroller.php?cv=" + Application.ProductVersion);
             txtPST.BackColor = SystemColors.Control;
             txtPST.ForeColor = SystemColors.Control;
             txtPST.Text = "Succes!";
@@ -142,11 +148,6 @@ namespace BeMacized_Trollizer
                 Clock.Dispose();
             };
             Clock.Start();
-        }
-
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            webBrowser1.Visible = true;
         }
     }
 }
