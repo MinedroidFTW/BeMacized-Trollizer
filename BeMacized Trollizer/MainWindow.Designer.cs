@@ -55,10 +55,18 @@
             this.Pwdlabel = new System.Windows.Forms.Label();
             this.btnPwdGen = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtCrypasoOut = new System.Windows.Forms.TextBox();
+            this.btnCrypaso = new System.Windows.Forms.Button();
+            this.cmbbLang = new System.Windows.Forms.ComboBox();
+            this.lblLang = new System.Windows.Forms.Label();
+            this.lblInputNr = new System.Windows.Forms.Label();
+            this.txtCrypasoIn = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtPST = new System.Windows.Forms.TextBox();
             this.btnPrintScreen = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnClrChat = new System.Windows.Forms.Button();
             this.chckSpam = new System.Windows.Forms.CheckBox();
             this.btnSpamStart = new System.Windows.Forms.Button();
             this.lblspamrepeat = new System.Windows.Forms.Label();
@@ -67,7 +75,6 @@
             this.lblspamtext = new System.Windows.Forms.Label();
             this.btnEXIT = new System.Windows.Forms.Button();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -75,6 +82,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -322,6 +330,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -330,6 +339,71 @@
             this.tabPage4.Size = new System.Drawing.Size(635, 406);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Misc";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txtCrypasoOut);
+            this.groupBox5.Controls.Add(this.btnCrypaso);
+            this.groupBox5.Controls.Add(this.cmbbLang);
+            this.groupBox5.Controls.Add(this.lblLang);
+            this.groupBox5.Controls.Add(this.lblInputNr);
+            this.groupBox5.Controls.Add(this.txtCrypasoIn);
+            this.groupBox5.Location = new System.Drawing.Point(422, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(207, 110);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Crypaso-Code";
+            // 
+            // txtCrypasoOut
+            // 
+            this.txtCrypasoOut.Location = new System.Drawing.Point(88, 80);
+            this.txtCrypasoOut.Name = "txtCrypasoOut";
+            this.txtCrypasoOut.Size = new System.Drawing.Size(111, 20);
+            this.txtCrypasoOut.TabIndex = 5;
+            // 
+            // btnCrypaso
+            // 
+            this.btnCrypaso.Location = new System.Drawing.Point(6, 78);
+            this.btnCrypaso.Name = "btnCrypaso";
+            this.btnCrypaso.Size = new System.Drawing.Size(75, 23);
+            this.btnCrypaso.TabIndex = 4;
+            this.btnCrypaso.Text = "Create";
+            this.btnCrypaso.UseVisualStyleBackColor = true;
+            this.btnCrypaso.Click += new System.EventHandler(this.btnCrypaso_Click);
+            // 
+            // cmbbLang
+            // 
+            this.cmbbLang.FormattingEnabled = true;
+            this.cmbbLang.Location = new System.Drawing.Point(88, 51);
+            this.cmbbLang.Name = "cmbbLang";
+            this.cmbbLang.Size = new System.Drawing.Size(112, 21);
+            this.cmbbLang.TabIndex = 3;
+            // 
+            // lblLang
+            // 
+            this.lblLang.AutoSize = true;
+            this.lblLang.Location = new System.Drawing.Point(6, 54);
+            this.lblLang.Name = "lblLang";
+            this.lblLang.Size = new System.Drawing.Size(58, 13);
+            this.lblLang.TabIndex = 2;
+            this.lblLang.Text = "Language:";
+            // 
+            // lblInputNr
+            // 
+            this.lblInputNr.AutoSize = true;
+            this.lblInputNr.Location = new System.Drawing.Point(6, 26);
+            this.lblInputNr.Name = "lblInputNr";
+            this.lblInputNr.Size = new System.Drawing.Size(76, 13);
+            this.lblInputNr.TabIndex = 1;
+            this.lblInputNr.Text = "Input number:";
+            // 
+            // txtCrypasoIn
+            // 
+            this.txtCrypasoIn.Location = new System.Drawing.Point(88, 23);
+            this.txtCrypasoIn.Name = "txtCrypasoIn";
+            this.txtCrypasoIn.Size = new System.Drawing.Size(112, 20);
+            this.txtCrypasoIn.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -365,7 +439,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnClrChat);
             this.groupBox3.Controls.Add(this.chckSpam);
             this.groupBox3.Controls.Add(this.btnSpamStart);
             this.groupBox3.Controls.Add(this.lblspamrepeat);
@@ -378,6 +452,17 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Spamtool";
+            // 
+            // btnClrChat
+            // 
+            this.btnClrChat.Location = new System.Drawing.Point(105, 71);
+            this.btnClrChat.Name = "btnClrChat";
+            this.btnClrChat.Size = new System.Drawing.Size(64, 23);
+            this.btnClrChat.TabIndex = 2;
+            this.btnClrChat.Text = "CC";
+            this.Tooltip.SetToolTip(this.btnClrChat, "Clears chat with number of lines you gave");
+            this.btnClrChat.UseVisualStyleBackColor = true;
+            this.btnClrChat.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // chckSpam
             // 
@@ -451,17 +536,6 @@
             this.Tooltip.IsBalloon = true;
             this.Tooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.Tooltip_Popup);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(105, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CC";
-            this.Tooltip.SetToolTip(this.button1, "Clears chat with number of lines you gave");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +558,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -531,7 +607,14 @@
         private System.Windows.Forms.Button btnPrintScreen;
         private System.Windows.Forms.TextBox txtPST;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClrChat;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txtCrypasoOut;
+        private System.Windows.Forms.Button btnCrypaso;
+        private System.Windows.Forms.ComboBox cmbbLang;
+        private System.Windows.Forms.Label lblLang;
+        private System.Windows.Forms.Label lblInputNr;
+        private System.Windows.Forms.TextBox txtCrypasoIn;
     }
 }
 

@@ -23,8 +23,12 @@ namespace BeMacized_Trollizer
             txtPST.ForeColor = SystemColors.Control;
             txtPST.Text = "Succes!";
             if (!Settings.CheckUpdate()) { MessageBox.Show("You need to update!"); }
+            cmbbLang.Items.Add("English");
+            cmbbLang.Items.Add("French");
+            cmbbLang.Items.Add("Spanish");
+            cmbbLang.Items.Add("Dutch");
+            cmbbLang.Items.Add("German");
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -158,6 +162,45 @@ namespace BeMacized_Trollizer
             {
                 MessageBox.Show("Focus in a textfield and wait 5 seconds after pressing ok!", "Prepare!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 StartSpamTimer(".", times, chckSpam.Checked);
+            }
+        }
+
+        private void btnCrypaso_Click(object sender, EventArgs e)
+        {
+            string language = "";
+            bool works = true;
+            try
+            {
+                switch (cmbbLang.SelectedItem.ToString())
+                {
+                    case "English":
+                        language = "EN";
+                        break;
+                    case "French":
+                        language = "FR";
+                        break;
+                    case "Spanish":
+                        language = "ES";
+                        break;
+                    case "Dutch":
+                        language = "NL";
+                        break;
+                    case "German":
+                        language = "DU";
+                        break;
+                    default:
+                        MessageBox.Show("Please select a language!");
+                        works = false;
+                        break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Select a language!");
+            }
+            if (works)
+            {
+                txtCrypasoOut.Text = Crypaso.CrypasoCoded(txtCrypasoIn.Text, language).ToString();
             }
         }
     }

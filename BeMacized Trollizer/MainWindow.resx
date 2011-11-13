@@ -120,6 +120,9 @@
   <metadata name="Tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>8, 8</value>
   </metadata>
+  <metadata name="Tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>8, 8</value>
+  </metadata>
   <data name="chckSpam.ToolTip" xml:space="preserve">
     <value>When you use a fast sender it will send the messages very quickly.
 This works fine in chats like Skype, and webbrowsers.
