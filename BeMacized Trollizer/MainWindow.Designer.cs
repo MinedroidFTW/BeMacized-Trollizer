@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.webControl1 = new Awesomium.Windows.Forms.WebControl();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DirCreateGB = new System.Windows.Forms.GroupBox();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             this.lblspamtext = new System.Windows.Forms.Label();
             this.btnEXIT = new System.Windows.Forms.Button();
             this.Tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -94,7 +94,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.webBrowser1);
-            this.tabPage1.Controls.Add(this.webControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -102,13 +101,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
-            // webControl1
+            // webBrowser1
             // 
-            this.webControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webControl1.Location = new System.Drawing.Point(3, 3);
-            this.webControl1.Name = "webControl1";
-            this.webControl1.Size = new System.Drawing.Size(629, 400);
-            this.webControl1.TabIndex = 0;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScrollBarsEnabled = false;
+            this.webBrowser1.Size = new System.Drawing.Size(629, 400);
+            this.webBrowser1.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -364,6 +365,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.chckSpam);
             this.groupBox3.Controls.Add(this.btnSpamStart);
             this.groupBox3.Controls.Add(this.lblspamrepeat);
@@ -449,15 +451,16 @@
             this.Tooltip.IsBalloon = true;
             this.Tooltip.Popup += new System.Windows.Forms.PopupEventHandler(this.Tooltip_Popup);
             // 
-            // webBrowser1
+            // button1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(629, 400);
-            this.webBrowser1.TabIndex = 1;
+            this.button1.Location = new System.Drawing.Point(105, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "CC";
+            this.Tooltip.SetToolTip(this.button1, "Clears chat with number of lines you gave");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainWindow
             // 
@@ -527,8 +530,8 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnPrintScreen;
         private System.Windows.Forms.TextBox txtPST;
-        private Awesomium.Windows.Forms.WebControl webControl1;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

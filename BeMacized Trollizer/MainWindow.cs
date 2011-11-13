@@ -141,5 +141,24 @@ namespace BeMacized_Trollizer
             };
             Clock.Start();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int times = 0;
+            try
+            {
+                times = Convert.ToInt32(txtspamrepeat.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error: " + ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Just use a number at repeat option...");
+            }
+            if (times != 0)
+            {
+                MessageBox.Show("Focus in a textfield and wait 5 seconds after pressing ok!", "Prepare!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                StartSpamTimer(".", times, chckSpam.Checked);
+            }
+        }
     }
 }
