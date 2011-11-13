@@ -17,20 +17,12 @@ namespace BeMacized_Trollizer
         public MainWindow()
         {
             InitializeComponent();
-            this.Text = "BeMacized Trollizer - " + Application.ProductVersion;
-            //webControl1.Visible = false;
-            
-            if (Settings.uptodate)
-                //webControl1.Navigate("http://bemacized.com/trollizer/uptodate/index.html");
-                webControl1.LoadURL("http://bemacized.com/trollizer/uptodate/index.html");
-            else
-                webControl1.LoadURL("http://bemacized.com/trollizer/updateavailable/index.html");
-             
-            //webBrowser1.Navigate("http://data.bemacizedgaming.com/bmgtroller.php?cv=" + Application.ProductVersion);
+            this.Text = "BeMacized Trollizer - " + Application.ProductVersion; 
+            webBrowser1.Navigate("http://data.bemacizedgaming.com/bmgtroller.php?cv=" + Application.ProductVersion);
             txtPST.BackColor = SystemColors.Control;
             txtPST.ForeColor = SystemColors.Control;
             txtPST.Text = "Succes!";
-            if (Settings.CheckUpdate()) { MessageBox.Show("You need to update!"); }
+            if (!Settings.CheckUpdate()) { MessageBox.Show("You need to update!"); }
         }
 
         private void button1_Click(object sender, EventArgs e)

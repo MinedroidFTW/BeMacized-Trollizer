@@ -36,8 +36,11 @@ namespace BeMacized_Trollizer
         public static bool CheckUpdate()
         {
             WebClient wc = new WebClient();
-            string update = wc.DownloadString("http://data.bemacizedgaming.com/vercompare.php?cv=");
-            if (update == "true")
+            string updatestr = wc.DownloadString("http://data.bemacizedgaming.com/version.ini");
+            updatestr = updatestr.Replace(".", "");
+            int version = Convert.ToInt32(updatestr);
+            int programversion = Convert.ToInt32(Application.ProductVersion.Replace(".", ""));
+            if (version > programversion)
             {
                 uptodate = false;
             }
