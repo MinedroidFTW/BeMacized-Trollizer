@@ -5,3 +5,4 @@
 - Added Spammer
 - Added Homepage
 - Added Update system
+- Added Crypaso tool
